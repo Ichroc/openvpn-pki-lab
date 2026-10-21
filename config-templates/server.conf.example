@@ -1,0 +1,29 @@
+# Modèle de configuration serveur OpenVPN — à copier vers
+# /etc/openvpn/server/server.conf sur la VM Secure, puis à adapter.
+#
+# Remplacer :
+#   - <reseau_prive_Serveur> et <masque> : le réseau derrière Secure
+#     (ex: 192.168.56.0 255.255.255.0)
+#
+# Les fichiers ca.crt, server.crt, server.key et vpn.key doivent être
+# présents dans le même dossier que ce fichier (/etc/openvpn/server/).
+
+port 1194
+proto udp
+dev tun
+
+ca ca.crt
+cert server.crt
+key server.key
+dh none
+
+server 10.8.0.0 255.255.255.0
+push "route <reseau_prive_Serveur> <masque>"
+
+tls-crypt vpn.key
+data-ciphers AES-256-GCM
+
+user nobody
+group nogroup
+persist-key
+persist-tun

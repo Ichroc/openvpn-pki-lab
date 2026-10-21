@@ -1,0 +1,22 @@
+# Modèle de fichier client OpenVPN — généré automatiquement par
+# scripts/generate_ovpn.sh ou scripts/generate_and_send.sh.
+# Conservé ici pour référence / dépannage manuel.
+#
+# Remplacer :
+#   - <nom_client>   : le nom donné au client lors de la signature (ex: client1)
+#   - <IP_Secure>    : l'adresse IP externe actuelle de la VM Secure
+
+client
+dev tun
+proto udp
+remote <IP_Secure> 1194
+remote-cert-tls server
+tls-crypt vpn.key
+data-ciphers AES-256-GCM
+nobind
+persist-key
+persist-tun
+
+ca ca.crt
+cert <nom_client>.crt
+key <nom_client>.key

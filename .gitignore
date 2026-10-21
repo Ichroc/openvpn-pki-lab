@@ -1,0 +1,20 @@
+# Jamais de vrais secrets dans ce dépôt : clés, certificats, demandes,
+# fichiers .ovpn réels et dossiers Easy-RSA générés localement.
+
+*.key
+*.crt
+*.req
+*.pem
+*.p12
+*.ovpn
+!config-templates/*.ovpn.example
+
+pki/
+pki.old/
+vars
+
+# Captures réseau et listes de mots de passe utilisées pendant les démos
+*.pcap
+*.pcapng
+mini-liste*.txt
+liste.txt
