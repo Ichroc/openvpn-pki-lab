@@ -93,3 +93,7 @@ Voir `docs/demo-sequencement.md` pour la suite (démonstration des attaques, ave
 - La **clé privée de la CA** (`pki/private/ca.key`) ne quitte jamais Secure.
 - La **clé privée de chaque client** ne quitte jamais ce client : seule la demande de certificat (`.req`) circule.
 - Les attaques de démonstration (brute-force, injection, capture réseau) sont réalisées uniquement sur des VMs et des comptes de test créés pour ce lab.
+
+## Licence
+
+Scripts et documentation sous licence MIT (voir [LICENSE](LICENSE)).
